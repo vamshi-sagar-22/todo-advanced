@@ -1,0 +1,11 @@
+<%- include('partials/header') %>
+
+  <div class="login-form form-1 rounded">
+    <form action="/login" method="post">
+      <input type="text" name="username" value="" placeholder="Email Address" required autofocus><br>
+      <input type="password" name="password" value="" placeholder="Password" required><br>
+      <button class="rounded btn-lg" type="submit" name="button">Sign In</button>
+  </form>
+</div>
+
+<%- include('partials/footer') %>

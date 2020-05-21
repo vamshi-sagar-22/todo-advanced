@@ -1,0 +1,29 @@
+<%- include('partials/header') %>
+<section class="section-list">
+  <div class="box" id="heading">
+    <h1><%=day%></h1>
+  </div>
+  <div class="box">
+    <% for(var i=0;i<listItem.length;i++){%>
+      <form action="/delete" method="post">
+        <div class="item">
+          <input type="checkbox" name="checkbox" value="<%=listItem[i] %>" onchange="this.form.submit()">
+          <p><%=listItem[i]%></p>
+        </div>
+        <input type="hidden" name="listname" value="<%=day%>"></input>
+        </form>
+        <% } %>
+    <form class="item" action="/home" method="post">
+      <input type="text" name="todo" placeholder="enter your todo" autocomplete="off">
+      <button type="submit" name="button" value=<%=day%> >+</button>
+    </form>
+    <form class="logout" action="/logout" method="post">
+      <button class="btn btn-lg rounded logout1" type="submit" name="button">Logout</button>
+    </form>
+  </div>
+
+</section>
+
+
+
+<%- include('partials/footer') %>

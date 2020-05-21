@@ -1,0 +1,29 @@
+<%- include('partials/header') %>
+<section class="signup">
+<div class="box1">
+<div class="form-1 rounded">
+  <form action="/" method="post">
+    <input type="text" name="name" value="" placeholder="Name">
+    <input type="text" name="username" value="" placeholder="Email Address" required><br>
+    <input type="password" name="password" value="" placeholder="Password" required><br>
+    <button class="rounded btn-lg" type="submit" name="button">Sign Up!</button>
+</form>
+<form action="/login" method="get">
+  <p class="form-p">Already have an account?</p>
+  <button type="submit" class="rounded btn-lg" name="button">Login Here</button>
+</form>
+</div>
+</div>
+<h1 class="content">Save all your todo items. Go ahead and register or login to save your stuff.</h1>
+<div class="box2 form-2 rounded">
+  <form class="rounded" action="/auth/google" method="get">
+    <button class="rounded border google" type="submit" name="button">Sign Up with Google</button>
+  </form>
+</div>
+
+</section>
+
+
+
+
+<%- include('partials/footer') %>
