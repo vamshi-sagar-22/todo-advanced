@@ -48,7 +48,7 @@ passport.use(users.createStrategy())
 passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/google/home"
+    callbackURL: "https://desolate-reef-30364.herokuapp.com/auth/google/home"
   },
   function(accessToken, refreshToken, profile, cb) {
     users.findOrCreate({ googleId: profile.id,name:profile.displayName }, function (err, user) {
