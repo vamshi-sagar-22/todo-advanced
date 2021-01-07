@@ -79,8 +79,9 @@ res.render("home")
 app.get("/home",function(req,res){
   if(req.isAuthenticated()){
     users.findById(req.user._id,function(err,data){
+      var nameofuser = data.name;
       lists.findOne({userid:req.user._id},function(err,data){
-        res.render("list",{day:"Home",listItem:data.home})
+        res.render("list",{day:"Home",listItem:data.home,duh:nameofuser})
       })
     })
   }
@@ -137,7 +138,7 @@ app.get("/login",function(req,res){
     res.redirect("/home")
   }
   else{
-  res.render("login")
+  res.render("login");
   }
 })
 
@@ -178,9 +179,10 @@ app.post("/login",function(req,res){
     username:req.body.username,
     password:req.body.password
   })
+
   req.login(u,function(err){
     if(err){
-      console.log(err);
+      console.log("error")
     }
     else{
       passport.authenticate("local")(req,res,function(){
