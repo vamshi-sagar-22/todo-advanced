@@ -20,7 +20,8 @@ app.use(session({
 }))
 app.use(passport.initialize())
 app.use(passport.session())
-const db = mongoose.connect("mongodb+srv://admin-vamshi:vamshi22@cluster0-ycyqx.mongodb.net/todoDB?retryWrites=true&w=majority",{useNewUrlParser:true,useUnifiedTopology:true},()=>console.log("connected"))
+
+mongoose.connect("mongodb+srv://admin-vamshi:vamshi22@cluster0-ycyqx.mongodb.net/todoDB?retryWrites=true&w=majority",{useNewUrlParser:true,useUnifiedTopology:true},()=>console.log("connected"))
 const userSchema = new mongoose.Schema({
   name:String,
   username:String,
